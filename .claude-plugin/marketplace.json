@@ -1,0 +1,19 @@
+{
+  "name": "pablitomaestro-agi",
+  "owner": {
+    "name": "PablitoMaestro"
+  },
+  "description": "PablitoMaestro's curated marketplace of AGI-grade Claude Code and Codex plugins.",
+  "plugins": [
+    {
+      "name": "pablitomaestro-agi-appbuilder",
+      "source": {
+        "source": "github",
+        "repo": "PablitoMaestro/pablitomaestro-agi-appbuilder"
+      },
+      "description": "7-phase orchestrator (idea → PRD → design → scaffold → env → execute → review → smoke). Cross-tool (Claude Code + Codex).",
+      "category": "orchestrator",
+      "tags": ["agi", "app-builder", "autonomous", "skills", "codex", "claude-code"]
+    }
+  ]
+}
