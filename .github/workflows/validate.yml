@@ -1,0 +1,60 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate marketplace JSON
+        run: |
+          jq empty .claude-plugin/marketplace.json
+
+      - name: Verify marketplace required fields
+        run: |
+          set -e
+          jq -e '
+            (.name | type == "string" and length > 0) and
+            (.owner.name | type == "string" and length > 0) and
+            (.plugins | type == "array" and length > 0)
+          ' .claude-plugin/marketplace.json >/dev/null \
+            || { echo "marketplace.json missing required fields (name/owner.name/non-empty plugins)"; exit 1; }
+
+      - name: Verify each plugin entry has name + source
+        run: |
+          set -e
+          n=$(jq '.plugins | length' .claude-plugin/marketplace.json)
+          for i in $(seq 0 $((n-1))); do
+            jq -e --argjson i "$i" '
+              .plugins[$i] | (.name | type == "string" and length > 0) and (.source != null)
+            ' .claude-plugin/marketplace.json >/dev/null \
+              || { echo "plugin entry [$i] missing name or source"; exit 1; }
+          done
+
+      - name: Verify plugin names are unique within marketplace
+        run: |
+          dupes=$(jq -r '.plugins[].name' .claude-plugin/marketplace.json | sort | uniq -d)
+          if [ -n "$dupes" ]; then
+            echo "duplicate plugin names: $dupes"
+            exit 1
+          fi
+
+      - name: Verify github source repos are accessible
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          jq -r '.plugins[] | select(.source.source == "github") | .source.repo' \
+            .claude-plugin/marketplace.json | while read -r repo; do
+            echo "Checking $repo"
+            gh repo view "$repo" --json name >/dev/null \
+              || { echo "UNREACHABLE: $repo"; exit 1; }
+          done
