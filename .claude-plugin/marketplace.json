@@ -8,8 +8,8 @@
     {
       "name": "autonomous-appbuilder",
       "source": {
-        "source": "github",
-        "repo": "PablitoMaestro/autonomous-appbuilder"
+        "source": "git",
+        "url": "https://github.com/PablitoMaestro/autonomous-appbuilder.git"
       },
       "description": "7-phase orchestrator (idea → PRD → design → scaffold → env → execute → review → smoke). Cross-tool (Claude Code + Codex).",
       "category": "orchestrator",
@@ -18,8 +18,8 @@
     {
       "name": "immortals",
       "source": {
-        "source": "github",
-        "repo": "PablitoMaestro/claude-immortals"
+        "source": "git",
+        "url": "https://github.com/PablitoMaestro/claude-immortals.git"
       },
       "description": "Autonomous life cycle runner with multi-world orchestration. Spawns Claude agents as mythological beings that explore, work, and pass wisdom across lives. Hot-reloadable config, hand-of-god universe orchestrator, optional oversight agent.",
       "category": "orchestrator",
