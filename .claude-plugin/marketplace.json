@@ -14,6 +14,16 @@
       "description": "7-phase orchestrator (idea → PRD → design → scaffold → env → execute → review → smoke). Cross-tool (Claude Code + Codex).",
       "category": "orchestrator",
       "tags": ["agi", "app-builder", "autonomous", "skills", "codex", "claude-code"]
+    },
+    {
+      "name": "immortals",
+      "source": {
+        "source": "github",
+        "repo": "PablitoMaestro/claude-immortals"
+      },
+      "description": "Autonomous life cycle runner with multi-world orchestration. Spawns Claude agents as mythological beings that explore, work, and pass wisdom across lives. Hot-reloadable config, hand-of-god universe orchestrator, optional oversight agent.",
+      "category": "orchestrator",
+      "tags": ["autonomous", "agents", "lifecycle", "immortals", "claude-code", "orchestrator"]
     }
   ]
 }

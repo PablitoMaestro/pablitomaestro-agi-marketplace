@@ -25,6 +25,7 @@ To refresh after the marketplace is updated:
 | Plugin | Description | Repo |
 |---|---|---|
 | `pablitomaestro-agi-appbuilder` | 7-phase orchestrator (idea → PRD → design → scaffold → env → execute → review → smoke). Cross-tool (Claude Code + Codex). | [PablitoMaestro/pablitomaestro-agi-appbuilder](https://github.com/PablitoMaestro/pablitomaestro-agi-appbuilder) |
+| `immortals` | Autonomous life cycle runner with multi-world orchestration. Spawns Claude agents as mythological beings that explore, work, and pass wisdom across lives. | [PablitoMaestro/claude-immortals](https://github.com/PablitoMaestro/claude-immortals) |
 
 More to come — each plugin lives in its own repo with its own versioning. This catalog points to them via `github` sources, so installing the marketplace gives you access to all of them.
 
