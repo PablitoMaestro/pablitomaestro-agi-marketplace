@@ -11,9 +11,9 @@
         "source": "url",
         "url": "https://github.com/PablitoMaestro/autonomous-appbuilder.git"
       },
-      "description": "7-phase orchestrator (idea → PRD → design → scaffold → env → execute → review → smoke). Cross-tool (Claude Code + Codex).",
+      "description": "8-skill app builder: idea → PRD → design → scaffold → env → execute → review → smoke, via a main-loop orchestrator or a deterministic Workflow engine (worktree-isolated parallel builders, adversarial verify-before-merge). Cross-tool (Claude Code + Codex).",
       "category": "orchestrator",
-      "tags": ["agi", "app-builder", "autonomous", "skills", "codex", "claude-code"]
+      "tags": ["agi", "app-builder", "autonomous", "skills", "workflow", "codex", "claude-code"]
     },
     {
       "name": "immortals",
