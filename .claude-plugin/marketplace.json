@@ -11,7 +11,7 @@
         "source": "url",
         "url": "https://github.com/PablitoMaestro/autonomous-appbuilder.git"
       },
-      "description": "App builder: idea → PRD → design → scaffold → env → execute → review → smoke, via a main-loop orchestrator OR two deterministic Workflow engines — `build-app-workflow` (the pipeline as code) and `forge` (walk-away builder with a continuous closed verification loop that drives every flow until it's first-shot-verified). Cross-tool (Claude Code + Codex).",
+      "description": "App builder: idea → PRD → design → scaffold → env → execute → review → smoke, via a main-loop orchestrator OR two deterministic Workflow engines — `build-app-workflow` (the pipeline as code) and `forge` (walk-away builder with a continuous closed verification loop that drives every flow until it's first-shot-verified). Worktree-isolated parallel builds; ships to a private GitHub repo + Vercel with push-to-deploy. Cross-tool (Claude Code + Codex).",
       "category": "orchestrator",
       "tags": ["agi", "app-builder", "autonomous", "skills", "workflow", "codex", "claude-code"]
     },
